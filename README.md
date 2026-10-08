@@ -4,18 +4,18 @@
 classDiagram
 
 class Date {
-    - string date;
-    + Date();
-    + void init(string dateInput);
+    - string date
+    + Date()
+    + init(string dateInput)
 }
 
 class Address {
-    - string streetAddress;
-    - string townName;
-    - string stateAbbreviation;
-    - string zipCode;
-    + Address();
-    + void init(string streetAddressInput, string townNameInput, string stateAbbreviationInput, string ipCodeInput);
+    - string streetAddress
+    - string townName
+    - string stateAbbreviation
+    - string zipCode
+    + Address()
+    + init(string streetAddressInput, string townNameInput, string stateAbbreviationInput, string ipCodeInput)
 }
 
 class Student {
