@@ -3,15 +3,15 @@
 ```mermaid
 classDiagram
 
-class Student {
-
-}
-
 class Date {
 
 }
 
 class Address {
+
+}
+
+class Student {
 
 }
 
