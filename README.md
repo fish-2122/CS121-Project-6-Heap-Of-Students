@@ -32,8 +32,6 @@ class Student {
     - string dateOfGraduation
     - string creditsS
     - int credits
-    - stringstream ss
-    - stringstream converter
     + Student()
     + init(string studentStringInput)
     + printStudent()
