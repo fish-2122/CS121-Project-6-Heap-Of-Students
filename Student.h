@@ -14,8 +14,6 @@ class Student {
         std::string dateOfGraduation;
         std::string creditsS;
         int credits;
-        std::stringstream ss;
-        std::stringstream converter;
     public:
         Student();
         void init(std::string studentStringInput);

@@ -1,7 +1,7 @@
-application: Address.o Date.o main.o
-	g++ Address.o Date.o main.o -o application
+application: Address.o Date.o Student.o main.o
+	g++ Address.o Date.o Student.o main.o -o application
 
-main.o: Address.h Date.h main.cpp
+main.o: Address.h Date.h Student.h main.cpp
 	g++ -c -g main.cpp
 
 Address.o: Address.h Address.cpp
@@ -9,6 +9,9 @@ Address.o: Address.h Address.cpp
 
 Date.o: Date.h Date.cpp
 	g++ -c -g Date.cpp
+
+Student.o: Student.h Student.cpp
+	g++ -c -g Student.cpp
 
 clean:
 	rm *.o

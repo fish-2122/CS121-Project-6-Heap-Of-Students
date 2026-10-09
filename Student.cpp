@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Student.h"
 
 Student::Student() {
@@ -16,28 +17,30 @@ Student::Student() {
     Student::credits = 0;
 }
 
-Student::init(std::string studentStringInput) {
+void Student::init(std::string studentStringInput) {
     Student::studentString = studentStringInput;
     
-    Student::converter.clear();
-	Student::converter.str("");
-	Student::ss.clear();
-	Student::ss.str("");
+    std::stringstream ss;
+    std::stringstream converter;
+    converter.clear();
+	converter.str("");
+	ss.clear();
+	ss.str("");
 
-    Student::ss.str(Student::studentString);
+    ss.str(Student::studentString);
 
-    getline(Student::ss, Student::firstName, ',');
-    getline(Student::ss, Student::lastName, ',');
-    getline(Student::ss, Student::streetAddress, ',');
-    getline(Student::ss, Student::city, ',');
-    getline(Student::ss, Student::state, ',');
-    getline(Student::ss, Student::zipCode, ',');
-    getline(Student::ss, Student::dateOfBirth, ',');
-    getline(Student::ss, Student::dateOfGraduation, ',');
+    getline(ss, Student::firstName, ',');
+    getline(ss, Student::lastName, ',');
+    getline(ss, Student::streetAddress, ',');
+    getline(ss, Student::city, ',');
+    getline(ss, Student::state, ',');
+    getline(ss, Student::zipCode, ',');
+    getline(ss, Student::dateOfBirth, ',');
+    getline(ss, Student::dateOfGraduation, ',');
 
-    getline(Student::ss, Student::creditsS, ',');
-    Student::converter << Student::creditsS;
-    Student::converter >> Student::credits;
+    getline(ss, Student::creditsS, ',');
+    converter << Student::creditsS;
+    converter >> Student::credits;
 }
 
 void Student::printStudent() {
@@ -54,6 +57,6 @@ void Student::printStudent() {
 }
 
 std::string Student::getLastFirst() {
-    std::string returnString = "";
-    returnString << Student::lastName << ", " << Student::firstName << std::endl;
+    std::string returnString = Student::lastName + ", " + Student::firstName;
+    return returnString;
 }

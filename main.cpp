@@ -5,16 +5,18 @@
 
 int main() {
     Date d;
-    d.init("09/21/2007");
+    d.init("03/24/2003");
     d.printDate();
 
     Address a;
     a.init("505 Main St", "Townsville", "IN", "51254");
     a.printAddress();
 
-    std::string studentString = "";
+    std::string studentString = "John,Smith,403 Main St,Townsville,IN,67493,02/22/2022,05/25/2030/,150";
     Student* s = new Student();
-    s->init
+    s->init(studentString);
+    s->printStudent();
+    std::cout << s->getLastFirst() << std::endl;
 
     return 0;
 }
